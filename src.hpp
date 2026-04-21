@@ -48,7 +48,7 @@ class any_ptr {
 
   // 从裸指针构造：接管生命周期
   template <class T>
-  explicit any_ptr(T *ptr) : cb(nullptr) {
+  any_ptr(T *ptr) : cb(nullptr) {
     if (ptr) cb = new control_block_impl<T>(ptr);
   }
 
